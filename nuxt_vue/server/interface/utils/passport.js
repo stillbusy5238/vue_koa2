@@ -4,11 +4,13 @@ import UserModel from '../../dbs/models/users'
 
 
 passport.use(new LocalStrategy(async function(username,password,done){
+
   let where = {
     username
   };
-  let result = UserModel.findOne(where)
-  if(result !=null){
+  let result = await UserModel.findOne(where)
+  // console.log(result);
+  if(result!=null){
     if(result.password===password){
       return done(null,result)
     }else{
@@ -16,7 +18,6 @@ passport.use(new LocalStrategy(async function(username,password,done){
     }
   }else{
     return done(null,false,'用户不存在')
-
   }
 }))
 
@@ -26,7 +27,6 @@ passport.serializeUser(function(user,done){
 
 passport.deserializeUser(function(user,done){
   return done(null,user)
-
 })
 
 export default passport
