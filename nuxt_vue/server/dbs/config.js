@@ -8,6 +8,7 @@ export default {
       return 6379
      }
    },
+   // smtp
    smtp:{
       get host(){
         return 'smtp.sina.com'
