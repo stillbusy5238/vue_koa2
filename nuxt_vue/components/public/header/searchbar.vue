@@ -26,7 +26,7 @@
             <dd
               v-for="(item,idx) in $store.state.home.hotPlace.slice(0,5)"
               :key="idx">
-              <a :href="'/products?keyword='+encodeURIComponent(item.name)">{{ item.name }}</a>
+              <a :href="'/product?keyword='+encodeURIComponent(item.name)">{{ item.name }}</a>
             </dd>
           </dl>
           <dl
@@ -35,7 +35,7 @@
             <dd
               v-for="(item,idx) in searchList"
               :key="idx">
-              <a :href="'/products?keyword='+encodeURIComponent(item.name)">{{ item.name }}</a>
+              <a :href="'/product?keyword='+encodeURIComponent(item.name)">{{ item.name }}</a>
             </dd>
           </dl>
         </div>
@@ -43,7 +43,7 @@
           <a
             v-for="(item,idx) in $store.state.home.hotPlace.slice(0,5)"
             :key="idx"
-            :href="'/products?keyword='+encodeURIComponent(item.name)">{{ item.name }}</a>
+            :href="'/product?keyword='+encodeURIComponent(item.name)">{{ item.name }}</a>
         </p>
         <ul class="nav">
           <li><nuxt-link
